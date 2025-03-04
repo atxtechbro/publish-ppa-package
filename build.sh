@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "Running build.sh"
 
 set -e
 export DEBIAN_FRONTEND=noninteractive
@@ -43,6 +44,7 @@ if [[ -n "$EXTRA_SERIES" ]]; then
 fi
 
 mkdir -p /tmp/workspace/source
+echo "Tarball path: $TARBALL"
 cp -v $TARBALL /tmp/workspace/source
 if [[ -n $DEBIAN_DIR ]]; then
     cp -rv $DEBIAN_DIR /tmp/workspace/debian
